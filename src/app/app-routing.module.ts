@@ -1,3 +1,4 @@
+import { GithubService } from './services/github.service';
 import { ShowArticleComponent } from './components/show-article/show-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { AddArticleComponent } from './components/add-article/add-article.component';
@@ -7,11 +8,13 @@ import { AboutComponent } from './components/about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ListArticlesComponent } from './components/list-articles/list-articles.component';
+import { ListUsersComponent } from './components/list-users/list-users.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'users', component: ListUsersComponent},
   {path: 'blog', component: ListArticlesComponent},
   {path: 'blog/add', component: AddArticleComponent},
   {path: 'blog/edit/:id', component: EditArticleComponent},
