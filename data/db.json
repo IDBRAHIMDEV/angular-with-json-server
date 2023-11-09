@@ -1,0 +1,13 @@
+{
+  "articles": [
+    {
+      "title": "React redux",
+      "description": "my courses",
+      "author": "Haitam",
+      "id": 2
+    }
+  ],
+  "categories": [],
+  "tags": [],
+  "users": []
+}

@@ -1,0 +1,12 @@
+<div class="row my-5">
+    <div class="col-md-8">
+        <h1>List of users</h1>
+    </div>
+    <div class="col-md-4 text-end"><input type="search" placeholder="Search" class="form-control"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 my-2" *ngFor="let user of users">
+        <app-card [user]="user"></app-card>
+    </div>
+</div>
