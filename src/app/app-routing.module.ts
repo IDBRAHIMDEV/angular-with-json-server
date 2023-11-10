@@ -1,3 +1,4 @@
+import { BlogComponent } from './components/blog/blog.component';
 import { GithubService } from './services/github.service';
 import { ShowArticleComponent } from './components/show-article/show-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
@@ -15,10 +16,12 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'users', component: ListUsersComponent},
-  {path: 'blog', component: ListArticlesComponent},
-  {path: 'blog/add', component: AddArticleComponent},
-  {path: 'blog/edit/:id', component: EditArticleComponent},
-  {path: 'blog/:id', component: ShowArticleComponent},
+  {path: 'blog', component: BlogComponent, children: [
+    {path: '', component: ListArticlesComponent},
+    {path: 'add', component: AddArticleComponent},
+    {path: 'edit/:id', component: EditArticleComponent},
+    {path: ':id', component: ShowArticleComponent},
+  ]}
 ];
 
 @NgModule({

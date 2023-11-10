@@ -13,7 +13,8 @@ import { ShowArticleComponent } from './components/show-article/show-article.com
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { NavbarComponent } from './components/navbar/navbar.component'
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BlogComponent } from './components/blog/blog.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavbarComponent } from './components/navbar/navbar.component'
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

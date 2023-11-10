@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AddArticleComponent {
 
+  article: any = {
+    title: '',
+    description: '',
+    image: '',
+    price: 0
+  }
+
 }
