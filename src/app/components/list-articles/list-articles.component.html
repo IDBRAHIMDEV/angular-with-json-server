@@ -1,8 +1,52 @@
+
+
 <div class="row my-5">
     <div class="col-md-6">
         <h1>Blog</h1>
     </div>
     <div class="col-md-6 text-end">
         <a routerLink="/blog/add" class="btn btn-success">Add</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">image</th>
+                        <th scope="col">Published</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="" *ngFor="let article of articles">
+                        <td scope="row">
+                            
+                            {{ article.title }}
+                        </td>
+                        <td>{{ article.description }}</td>
+                        <td><img width="100px" height="auto" [src]="article.image" [alt]="article.title"></td>
+                        <td><span class="badge" 
+                        [ngClass]="{
+                            'bg-success': article.published,
+                            'bg-danger': !article.published
+                        }">
+                          <button (click)="togglePublished(article)" class="btn btn-sm">{{ article.published }}</button> 
+                        </span> 
+                    </td>
+                        <td [noWrap]="true">
+                            <a [routerLink]="['/blog/edit', article.id]" class="btn btn-sm btn-warning me-2">Edit</a>
+                            <button class="btn btn-sm btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        
     </div>
 </div>

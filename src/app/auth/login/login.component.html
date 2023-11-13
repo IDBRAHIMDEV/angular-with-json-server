@@ -1,0 +1,26 @@
+
+
+<div class="row my-5">
+    <div class="col-md-6 mx-auto">
+        <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+    </div>
+</div>
+
+<div class="row my-5">
+    <div class="col-md-4 mx-auto">
+        <h1 class="my-4">Login</h1>
+        <form [formGroup]="loginForm" (submit)="login()">
+            <div class="form-group my3">
+                <label for="">Email</label>
+                <input formControlName="email" type="text" id="email" class="form-control">
+            </div>
+            <div class="form-group my-3">
+                <label for="">Password</label>
+                <input formControlName="password" type="password" name="" id="password" class="form-control">
+            </div>
+            <div class="d-grid my-2">
+                <button class="btn btn-dark">Login</button>
+            </div>
+        </form>
+    </div>
+</div>

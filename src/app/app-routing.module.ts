@@ -1,3 +1,4 @@
+import { AuthModule } from './auth/auth.module';
 import { BlogComponent } from './components/blog/blog.component';
 import { GithubService } from './services/github.service';
 import { ShowArticleComponent } from './components/show-article/show-article.component';
@@ -21,7 +22,9 @@ const routes: Routes = [
     {path: 'add', component: AddArticleComponent},
     {path: 'edit/:id', component: EditArticleComponent},
     {path: ':id', component: ShowArticleComponent},
-  ]}
+  ]},
+  {path: 'dashboard', loadChildren:() => import('./dashboard/dashboard.module').then(m => m.DashboardModule)},
+  {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)}
 ];
 
 @NgModule({

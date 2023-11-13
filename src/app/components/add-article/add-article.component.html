@@ -10,24 +10,44 @@
 <div class="row my-5">
     <div class="col-md-8 mx-auto">
 
-        <div class="form-group my-3">
-            <label for="title">Title</label>
-            <input type="text" id="title" class="form-control">
-        </div>
-        <div class="form-group my-3">
-            <label for="description">description</label>
-            <textarea name="" id="description" rows="4" class="form-control"></textarea>
-        </div>
-        <div class="form-group my-3">
-            <label for="image">image</label>
-            <input type="text" name="image" id="image" class="form-control">
-        </div>
-        <div class="form-group my-3">
-            <label for="published">published</label>
-            <input type="checkbox" id="published" class="form-control">
-        </div>
-        <div class="d-grid my-3">
-            <button class="btn btn-primary">New Article</button>
-        </div>
+        <div *ngIf="message" [ngClass]="{
+            'alert-success': status == 'success',
+            'alert-danger': status == 'error'
+        }" 
+        [ngStyle]="{
+            fontSize: status == 'success' ? '30px' : '10px',
+            color: status == 'success' ? 'pink' : 'green'
+        }"
+        class="alert m-5 text-center">{{ message }}</div>
+        
+        <form #form="ngForm">
+            <div class="form-group my-3">
+                <label for="title">Title</label>
+                <input required minlength="3" maxlength="10" pattern="[a-zA-Z0-9 ]*" #title="ngModel" name="title" ngModel type="text" id="title" class="form-control">
+                <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+                    <div *ngIf="title.errors?.['required']">This field is required !</div>
+                    <div *ngIf="title.errors?.['minlength']">This field should be great than 3 caracters !</div>
+                    <div *ngIf="title.errors?.['maxlength']">This field should be less than 10 caracters !</div>
+                    <div *ngIf="title.errors?.['pattern']">This field is not respect our pattern !</div>
+                </div>
+            </div>
+            <div class="form-group my-3">
+                <label for="description">description</label>
+                <textarea required ngModel #description="ngModel" name="description" id="description" rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group my-3">
+                <label for="image">image</label>
+                <input required ngModel #image="ngModel" type="text" name="image" id="image" class="form-control">
+            </div>
+            <div class="form-group my-3">
+                <label for="published">published</label>
+                <input type="checkbox" id="published" name="published" ngModel>
+            </div>
+            <div class="d-grid my-3">
+                <button [disabled]="form.invalid" (click)="persistArticle(form)" class="btn btn-primary">New Article</button>
+            </div>
+        </form>
+
+
     </div>
 </div>

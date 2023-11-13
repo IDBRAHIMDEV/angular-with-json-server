@@ -5,6 +5,69 @@
       "description": "my courses",
       "author": "Haitam",
       "id": 2
+    },
+    {
+      "title": "Bright Coding",
+      "description": "Learn web development",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/ndgpEj1YRAqrlS0gNZBb",
+      "published": true,
+      "id": 3
+    },
+    {
+      "title": "Learn Angular",
+      "description": "learn how to create a app with angular framework",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/E91FpFwIRW216LqpMIY6",
+      "published": true,
+      "id": 4
+    },
+    {
+      "title": "Learn Spring boot",
+      "description": "sfdgdfhrthb",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/4jgHzQESLa2F5uccFGc2",
+      "published": true,
+      "id": 5
+    },
+    {
+      "title": "my title",
+      "description": "sdgdfhg",
+      "image": "fthfj",
+      "published": false,
+      "id": 6
+    },
+    {
+      "title": "qsdsdfsdf",
+      "description": "drghgh",
+      "image": "fthfgjghj",
+      "published": true,
+      "id": 7
+    },
+    {
+      "title": "errthfghfgh",
+      "description": "fghghjghj",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/E91FpFwIRW216LqpMIY6",
+      "published": true,
+      "id": 8
+    },
+    {
+      "title": "my title",
+      "description": "rfghfgh",
+      "image": "ghjghj",
+      "published": true,
+      "id": 9
+    },
+    {
+      "title": "dfrgdgfth",
+      "description": "fghjghjgh",
+      "image": "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://cdn.filestackcontent.com/E91FpFwIRW216LqpMIY6",
+      "published": true,
+      "id": 10
+    },
+    {
+      "title": "",
+      "description": "",
+      "image": "",
+      "published": false,
+      "id": 11
     }
   ],
   "categories": [],

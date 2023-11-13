@@ -1,1 +1,49 @@
-<p>edit-article works!</p>
+<div class="row my-5">
+    <div class="col-md-6">
+        <h1>Edit Article</h1>
+    </div>
+    <div class="col-md-6 text-end">
+        <a routerLink="/blog" class="btn btn-success">Back to list</a>
+    </div>
+</div>
+
+<div class="row my-5">
+    <div class="col-md-8 mx-auto">
+
+        <form [formGroup]="articleForm">
+            <div class="form-group my-3">
+                <label for="title">Title</label>
+                <input formControlName="title" type="text" id="title" class="form-control">
+                <div class="alert alert-danger" *ngIf="articleForm.get('title')?.['touched'] && articleForm.get('title')?.invalid">
+                    <div *ngIf="articleForm.get('title')?.errors?.['required']">This field is required !</div>
+                    <div *ngIf="articleForm.get('title')?.errors?.['minlength']">This field should be great than {{ articleForm.get('title')?.['errors']?.['minlength']?.['actualLength'] }} / {{ articleForm.get('title')?.['errors']?.['minlength']?.['requiredLength'] }} caracters  !</div>
+                    <div *ngIf="articleForm.get('title')?.errors?.['maxlength']">This field should be less than 10 caracters  !</div>
+                    <div *ngIf="articleForm.get('title')?.errors?.['pattern']">This field is not respect our pattern !</div>
+                </div>
+            </div>
+            <div class="form-group my-3">
+                <label for="description">description</label>
+                <textarea formControlName="description" id="description" rows="4" class="form-control"></textarea>
+                <div class="alert alert-danger" *ngIf="articleForm.get('description')?.['touched'] && articleForm.get('description')?.invalid">
+                    <div *ngIf="articleForm.get('description')?.errors?.['required']">This field is required !</div>
+                </div>
+            </div>
+            <div class="form-group my-3">
+                <label for="image">image</label>
+                <input formControlName="image" type="text" name="image" id="image" class="form-control">
+                <div class="alert alert-danger" *ngIf="articleForm.get('image')?.['touched'] && articleForm.get('image')?.invalid">
+                    <div *ngIf="articleForm.get('image')?.errors?.['required']">This field is required !</div>
+                </div>
+            </div>
+            <div class="form-group my-3">
+                <label for="published">published</label>
+                <input formControlName="published" type="checkbox" id="published" name="published">
+            </div>
+            <div class="d-grid my-3">
+                <button [disabled]="articleForm.invalid" class="btn btn-warning">Update Article</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
