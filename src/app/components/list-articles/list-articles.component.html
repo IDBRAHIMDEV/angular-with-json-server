@@ -3,6 +3,8 @@
 <div class="row my-5">
     <div class="col-md-6">
         <h1>Blog</h1>
+        <h2>{{ price | currency:'USD':'symbol':'2.4-4' }}</h2>
+        <h2>{{ date | date:'dd/MM/yyyy h:m:s' }}</h2>
     </div>
     <div class="col-md-6 text-end">
         <a routerLink="/blog/add" class="btn btn-success">Add</a>
@@ -26,9 +28,9 @@
                     <tr class="" *ngFor="let article of articles">
                         <td scope="row">
                             
-                            {{ article.title }}
+                            {{ article.title | uppercase }}
                         </td>
-                        <td>{{ article.description }}</td>
+                        <td>{{ article.description | lowercase | resume }}</td>
                         <td><img width="100px" height="auto" [src]="article.image" [alt]="article.title"></td>
                         <td><span class="badge" 
                         [ngClass]="{

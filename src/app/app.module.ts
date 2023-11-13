@@ -19,6 +19,7 @@ import { BlogComponent } from './components/blog/blog.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
+import { ResumePipe } from './pipes/resume.pipe';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthModule } from './auth/auth.module';
     AboutComponent,
     ContactComponent,
     NavbarComponent,
-    BlogComponent
+    BlogComponent,
+    ResumePipe
   ],
   imports: [
     BrowserModule,

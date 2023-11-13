@@ -9,6 +9,9 @@ import { Article } from 'src/app/models/article';
 })
 export class ListArticlesComponent implements OnInit {
 
+  price = 2.7856434
+  date = new Date()
+
   blogService = inject(BlogService)
 
   articles: Article[] = []
